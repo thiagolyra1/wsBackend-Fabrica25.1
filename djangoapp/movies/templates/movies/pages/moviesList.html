@@ -29,7 +29,7 @@
                             <img class="listar-table-image" src="https://png.pngtree.com/png-vector/20190820/ourmid/pngtree-no-image-vector-illustration-isolated-png-image_1694547.jpg" alt="Imagem não encontrada" />
                         {% endif %}
                     </td>
-                    <td class="listar-table-cell">
+                    <td class="listar-table-cell" id="tres_perdidos">
                         <a class="listar-link editar-link" href="{% url 'movies:atualizar' pk=movie.id %}">Editar</a>
                         <a class="listar-link detalhar-link" href="{% url 'movies:detalhes' pk=movie.id %}">Detalhar</a> 
                         <a class="listar-link deletar-link" href="{% url 'movies:deletar' pk=movie.id %}">Deletar</a>

@@ -1,8 +1,9 @@
 {% extends 'movies/base.html' %}
 
 {% block content %}
+
     {% if movies %}
-        <h1 class="criar-edit-title">Editar</h1>
+        <h1 class="criar-edit-title">Editar filme</h1>
         <form action="{% url 'movies:atualizar' pk=movies.id %}" method="post" class="criar-form">
             {% csrf_token %}
             {% for field in form %}
@@ -13,6 +14,7 @@
             {% endfor %}
             <button type="submit" class="criar-submit-button">Salvar Edição</button>
         </form>
+
     {% else %}
         <h1 class="criar-register-title">Cadastrar Filme</h1>
         <form action="{% url 'movies:criar' %}" method="post" class="criar-form">
@@ -31,4 +33,5 @@
         <button class="criar-list-button"><a href="{% url 'movies:listar' %}" class="criar-button-link">Ir para a lista de filmes (Não esqueça de cadastrar seu livro antes, caso queira salvar ele no banco de dados)</a></button>
         <button class="criar-home-button"><a href="{% url 'movies:index' %}" class="criar-button-link">Voltar para a home</a></button>
     </div>
+
 {% endblock content %}

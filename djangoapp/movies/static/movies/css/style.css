@@ -18,7 +18,7 @@ h1 {
     transition: all 0.3s ease-in-out;
 }
 
-.list-group-item:hover {
+.list-group-item:not(span):hover {
     background-color: #007bff;
     color: white;
 }

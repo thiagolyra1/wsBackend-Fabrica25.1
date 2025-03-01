@@ -14,20 +14,18 @@
         </form>
         </br>
     {% else %}
-
-
-    <h1>Cadastrar Endereço</h1>
-    <form action="{% url 'movies:criar' %}" method="post">
-        {% csrf_token %}
-        {% for field in form %}
-            {{ field.label_tag }}
-            {{ field }}</br>
-        {% endfor %}
-    </br>
-        <button type="submit">Cadastrar</button>
-    </form>
-    </br>
+        <h1>Cadastrar Filme</h1>
+        <form action="{% url 'movies:criar' %}" method="post">
+            {% csrf_token %}
+            {% for field in form %}
+                {{ field.label_tag }}
+                {{ field }}</br>
+            {% endfor %}
+        </br>
+            <button type="submit">Cadastrar</button>
+        </form>
+        </br>
     {% endif %}
 
-    <button><a href="{% url 'movies:listar' %}">Listar</a></button>
+    <button><a href="{% url 'movies:index' %}">Voltar para a home</a></button>
 {% endblock content %}

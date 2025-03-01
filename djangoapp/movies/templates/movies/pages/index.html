@@ -1,14 +1,29 @@
 {% extends 'movies/base.html' %}
 
 {% block content %}
-    <h1>Movie Database: Gerenciamento de Filmes com Django </h1>
+    <div class="container text-center mt-5">
+        <h1 class="display-4 fw-bold text-primary">🎬 Movie Database</h1>
+        <h3 class="text-secondary">Gerenciamento de Filmes com Django</h3>
+        <p class="lead">Explore e gerencie um catálogo de filmes com uma interface moderna e intuitiva.</p>
 
-    <h3>O Movie Database é uma aplicação web desenvolvida com Django e Django REST Framework (DRF) que permite gerenciar um catálogo de filmes de forma eficiente. Com uma interface dinâmica construída com Django Template, os usuários podem visualizar e cadastrar filmes, enquanto a API REST facilita a integração e manipulação dos dados.</h3>
+        <div class="row mt-4">
+            <div class="col-md-6 mx-auto">
+                <div class="list-group">
+                    <a href="{% url 'movies:buscar' %}" class="list-group-item list-group-item-action">
+                        🔍 <strong>Consulta de filmes</strong> - Pesquise e visualize detalhes de filmes cadastrados.
+                    </a>
+                    <a href="{% url 'movies:criar' %}" class="list-group-item list-group-item-action">
+                        📄 <strong>CRUD completo</strong> - Cadastre, edite e exclua filmes facilmente.
+                    </a>
+                    <a href="https://www.omdbapi.com/" class="list-group-item list-group-item-action" target="_blank">
+                        🌍 <strong>Integração com API</strong> - Busque informações automáticas de filmes.
+                    </a>
+                    <span class="list-group-item">🗄 <strong>Banco de dados PostgreSQL</strong> - Armazena os dados de forma segura.</span>
+                    <span class="list-group-item">🐳 <strong>Ambiente Dockerizado</strong> - Facilita a configuração e a implantação.</span>
+                </div>
+            </div>
+        </div>
+    </div>
 
-    <h2>📌 Funcionalidades</h2>
-    <p>🔍 Consulta de filmes: Pesquise e visualize detalhes de filmes cadastrados. <a href="{% url 'movies:buscar'%}">Consulte filmes</a></p>
-    <p>📄 CRUD completo: Criação, leitura, atualização e exclusão de registros.<a href="{% url 'movies:criar'%}">Cadastre filmes</a></p>
-    <p>🌍 Integração com API externa: Busca automática de informações sobre filmes. <a href="https://www.omdbapi.com/">API consumida</a></p></p>
-    <p>🗄 Banco de dados PostgreSQL: Armazena os dados de forma segura e escalável.</p>
-    <p>🐳 Ambiente Dockerizado: Facilita a configuração e a implantação do projeto.</p>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 {% endblock content %}

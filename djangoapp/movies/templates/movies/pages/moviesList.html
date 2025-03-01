@@ -41,9 +41,7 @@
         </table>
         {% else %}
         <h1>Nenhum filme para listar.</h1>
-        <p><a href="{% url 'movies:buscar' %}">Faça buscas por filmes</a></p> ou
+        <p><a href="{% url 'movies:buscar' %}">Faça buscas por filmes</a></p>ou
         <p><a href="{% url 'movies:criar' %}">Crie seu próprio filme</a></p>
     {% endif %}
-
-{% comment %} <button><a href="{% url 'endereco:criar' %}">Criar</a></button> {% endcomment %}
 {% endblock content %}

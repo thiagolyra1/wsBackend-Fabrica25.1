@@ -8,7 +8,7 @@ class MoviesForm(forms.ModelForm):
                   'Writer', 'Plot', 'Awards', 'Poster', 'imdbRating', 'Type']
 
         labels = {
-            'Title': 'Filme:',
+            'Title': 'Título do filme:',
             'Rated': 'Classificação de idade:',
             'Released': 'Data de lançamento:',
             'Genre': 'Categoria:',
@@ -23,7 +23,7 @@ class MoviesForm(forms.ModelForm):
         }
         
         widgets = {
-            'Title': forms.TextInput(attrs={'class': 'form-control-lg', 'placeholder': 'Digite o filme:'}),
+            'Title': forms.TextInput(attrs={'class': 'form-control'}),
             'Rated': forms.TextInput(attrs={'class': 'form-control'}),
             'Released': forms.TextInput(attrs={'class': 'form-control'}),
             'Genre': forms.TextInput(attrs={'class': 'form-control'}),

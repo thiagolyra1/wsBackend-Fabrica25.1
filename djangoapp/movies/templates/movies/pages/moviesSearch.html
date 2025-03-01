@@ -1,7 +1,7 @@
 {% extends 'movies/base.html' %}
 
 {% block content %}
-    <h1>Pesquise por algum filme: </h1>
+    <h1>Pesquise pelo título do filme: </h1>
         
     {% if message %}
         <p>{{ message }}</p>
@@ -33,5 +33,9 @@
                 <img src="https://png.pngtree.com/png-vector/20190820/ourmid/pngtree-no-image-vector-illustration-isolated-png-image_1694547.jpg" alt="Imagem não encontrada" />
             {% endif %}
         </div>
+        <p><a href="{% url 'movies:buscar' %}">Pesquisar outro filme</a></p>
+
     {% endif %}
+    <p><a href="{% url 'movies:criar' %}">Criar seu próprio filme</a></p>        
+    <p><a href="{% url 'movies:listar' %}">Listar filmes cadastrados</a></p>
 {% endblock content %}

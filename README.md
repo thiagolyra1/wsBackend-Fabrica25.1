@@ -44,10 +44,12 @@ Uma API criada com o Django Rest Framework que permite gerenciar uma coleção d
 - 💡 **Conselho Aleatório** - Receba um conselho aleatório via API.
 - 🌍 **Integração com Advice Slip API**
 
-### 📌 Endpoints Principais
-- **Obter um conselho aleatório**: [`/api_rest/advice/random_advice/`](http://127.0.0.1:8000/api_rest/advice/random_advice/)
-- **Listar conselhos cadastrados**: [`/api_rest/advices/`](http://127.0.0.1:8000/api_rest/advices/)
-- **Criar um novo conselho**: [`/api_rest/advice/create/`](http://127.0.0.1:8000/api_rest/advice/create/)
+### 📌 Endpoints
+- **Obter um conselho aleatório (GET)**: [`/api_rest/advice/random_advice/`](http://127.0.0.1:8000/api_rest/advice/random_advice/)
+- **Listar conselhos cadastrados (GET)**: [`/api_rest/advices/`](http://127.0.0.1:8000/api_rest/advices/)
+- **Criar um novo conselho (POST)**: [`/api_rest/advice/create/`](http://127.0.0.1:8000/api_rest/advice/create/)
+- **Deletar um conselho por ID (DEL)**: [`/api_rest/advice/delete/{ID}/`](http://127.0.0.1:8000/api_rest/advice/delete/{ID}/)
+- **Atuzaliar um conselho por ID (PUT)**: [`/api_rest/advice/update/{ID}/`](http://127.0.0.1:8000/api_rest/advice/update/{ID}/)
 
 Recomenda-se usar ferramentas como **Insomnia** ou **Postman** para testar os endpoints.
 

@@ -18,13 +18,13 @@ def search_view(request):
 
     if request.method == 'POST':
         form = MoviesForm(request.POST)
-        filme_digitado = request.POST.get('Title')
+        filme_digitado = request.POST.get('Title', '').strip().replace(' ', '+')
         url = f'https://www.omdbapi.com/?t={filme_digitado}&y=2012&apikey=1308d3a0'
         response = requests.get(url)
 
         if response.status_code == 200:
             dados_filme = response.json()
-            if 'erro' in dados_filme:
+            if 'Error' in dados_filme:
                 message = 'Filme não encontrado'
             else:
                 resposta_em_json_filtrada = {

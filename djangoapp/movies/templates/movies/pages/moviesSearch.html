@@ -1,0 +1,37 @@
+{% extends 'movies/base.html' %}
+
+{% block content %}
+    <h1>Pesquise por algum filme: </h1>
+        
+    {% if message %}
+        <p>{{ message }}</p>
+    {% endif %}
+
+    <form method="post">
+        {% csrf_token %}
+        
+        <p>{{ form.Title }}</p>
+        <button type="submit">Buscar</button>
+    </form>
+
+    {% if form.instance.Rated %}
+        <div class="movie-info">
+            <h2>{{ form.instance.Title }}</h2>
+            <p><strong>Classificação de idade:</strong> {{ form.instance.Rated }}</p>
+            <p><strong>Data de lançamento:</strong> {{ form.instance.Released }}</p>
+            <p><strong>Categoria:</strong> {{ form.instance.Genre }}</p>
+            <p><strong>Diretor:</strong> {{ form.instance.Director }}</p>
+            <p><strong>Atores:</strong> {{ form.instance.Actors }}</p>
+            <p><strong>Escritores:</strong> {{ form.instance.Writer }}</p>
+            <p><strong>Sinopse:</strong> {{ form.instance.Plot }}</p>
+            <p><strong>Prêmios:</strong> {{ form.instance.Awards }}</p>
+            <p><strong>Rating do IMDB:</strong> {{ form.instance.imdbRating }}</p>
+            <p><strong>Tipo:</strong> {{ form.instance.Type }}</p>
+            {% if form.instance.Poster != "N/A" %}
+                <img src="{{form.instance.Poster}}" alt="{{form.instance.Title}}" />
+            {% else %}
+                <img src="https://png.pngtree.com/png-vector/20190820/ourmid/pngtree-no-image-vector-illustration-isolated-png-image_1694547.jpg" alt="Imagem não encontrada" />
+            {% endif %}
+        </div>
+    {% endif %}
+{% endblock content %}

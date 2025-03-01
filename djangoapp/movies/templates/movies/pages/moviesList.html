@@ -1,0 +1,55 @@
+{% extends 'movies/base.html' %}
+
+{% block content %}
+    {% if movies_list %}
+        <h1>Filmes:</h1>
+        <table>
+            <tr>
+                <th>Filme</th>
+                <th>Classificação de idade</th>
+                <th>Data de lançamento</th>
+                <th>Categoria</th>
+                <th>Atores</th>
+                <th>Escritores</th>
+                <th>Sinopse</th>
+                <th>Prêmios</th>
+                <th>Rating do IMDB</th>
+                <th>Tipo</th>
+                <th>Poster</th>
+                <th>Opções</th>
+            </tr>
+        {% for movie in movies_list %}
+            <tr>
+                <td>{{ movie.Title }}</td>
+                <td>{{ movie.Rated }}</td>
+                <td>{{ movie.Released }}</td>
+                <td>{{ movie.Genre }}</td>
+                <td>{{ movie.Actors }}</td>
+                <td>{{ movie.Writer }}</td>
+                <td>{{ movie.Plot }}</td>
+                <td>{{ movie.Awards }}</td>
+                <td>{{ movie.imdbRating }}</td>
+                <td>{{ movie.Type }}</td>
+                <td>
+                {% if movie.Poster != "N/A" %}
+                    
+                        <img src="{{movie.Poster}}" alt="{{movie.Title}}" />
+                {% else %}
+                        <img src="https://png.pngtree.com/png-vector/20190820/ourmid/pngtree-no-image-vector-illustration-isolated-png-image_1694547.jpg" alt="Imagem não encontrada" />
+                {% endif %}
+                </td>
+                
+                <td>
+                    <a href="{% url 'movies:atualizar' pk=movie.id %}">Editar</a>
+                    {% comment %} <a href="{% url 'endereco:detalhes' pk=movie.id %}">Detalhar</a>  {% endcomment %}
+                    <a href="{% url 'movies:deletar' pk=movie.id %}">Deletar</a>
+                </td>
+            </tr>
+        {% endfor %}
+        </table>
+        {% else %}
+        <h1>Nenhum filme para listar.</h1>
+    {% endif %}
+
+{% comment %} <button><a href="{% url 'endereco:criar' %}">Criar</a></button> {% endcomment %}
+{% endblock content %}

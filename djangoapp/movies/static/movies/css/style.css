@@ -1,12 +1,62 @@
-*{
+* {
     margin: 0;
     padding: 0;
+}
+
+html {
+    height: 100%;
 }
 
 body {
     background-color: #f8f9fa;
     font-family: 'Arial', sans-serif;
-    width: 100%
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; 
+}
+
+main {
+    flex: 1; /* Faz o conteúdo crescer ocupando o espaço disponível */
+}
+
+header, footer {
+    background-color: black;
+    color: white;
+    width: 100%;
+}
+
+.header-logo img {
+    width: 100px; /* Ajuste o tamanho conforme necessário */
+    height: auto; /* Mantém a proporção original da imagem */
+}
+
+header {
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 30px 0;
+}
+
+nav ul li{
+    list-style: none;
+    display: inline-block;
+}
+
+nav ul li a{
+    text-decoration: none;
+    color: #fff;
+    font-size: 18px;
+    padding: 0 15px;
+    text-transform: capitalize;
+}
+
+
+footer{
+    text-align: center;
+    font-size: 22px;
+    padding: 30px 0;
 }
 
 h1 {

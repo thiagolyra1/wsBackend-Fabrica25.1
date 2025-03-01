@@ -1,0 +1,14 @@
+<header>
+    <div class="header-logo">
+        <h2 class="h2header"><img src="https://i.pinimg.com/736x/e0/f4/ba/e0f4baaf2bf43934f69db75d4726f9fb.jpg" alt="logo"/></h2>
+    </div>
+
+    <nav>
+        <ul>
+            <li><a href="{% url 'movies:index' %}">home</a></li>
+            <li><a href="{% url 'movies:buscar' %}">Pesquisar filmes</a></li>
+            <li><a href="{% url 'movies:listar' %}">Listar Filmes</a></li>
+            <li><a href="{% url 'movies:criar' %}">Cadastrar Filme</a></li>
+        </ul>
+    </nav>
+</header>

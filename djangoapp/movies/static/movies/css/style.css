@@ -18,6 +18,7 @@ body {
 
 main {
     flex: 1; /* Faz o conteúdo crescer ocupando o espaço disponível */
+    margin-bottom: 30px;
 }
 
 header, footer {

@@ -9,6 +9,12 @@ O projeto está containerizado com **Docker** e pode ser facilmente executado ut
 
 ---
 
+## 🎥 Vídeo do projeto rodando
+
+https://www.youtube.com/watch?v=jS6GrdkL518
+
+---
+
 ## 🚀 Tecnologias Utilizadas
 
 - **Django** (Templates e DRF)

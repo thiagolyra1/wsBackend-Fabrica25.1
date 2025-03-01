@@ -1,6 +1,14 @@
 {% extends 'movies/base.html' %}
 
 {% block content %}
-    <h1>Meu index </h1>
-        
+    <h1>Movie Database: Gerenciamento de Filmes com Django </h1>
+
+    <h3>O Movie Database é uma aplicação web desenvolvida com Django e Django REST Framework (DRF) que permite gerenciar um catálogo de filmes de forma eficiente. Com uma interface dinâmica construída com Django Template, os usuários podem visualizar e cadastrar filmes, enquanto a API REST facilita a integração e manipulação dos dados.</h3>
+
+    <h2>📌 Funcionalidades</h2>
+    <p>🔍 Consulta de filmes: Pesquise e visualize detalhes de filmes cadastrados. <a href="{% url 'movies:buscar'%}">Consulte filmes</a></p>
+    <p>📄 CRUD completo: Criação, leitura, atualização e exclusão de registros.<a href="{% url 'movies:criar'%}">Cadastre filmes</a></p>
+    <p>🌍 Integração com API externa: Busca automática de informações sobre filmes. <a href="https://www.omdbapi.com/">API consumida</a></p></p>
+    <p>🗄 Banco de dados PostgreSQL: Armazena os dados de forma segura e escalável.</p>
+    <p>🐳 Ambiente Dockerizado: Facilita a configuração e a implantação do projeto.</p>
 {% endblock content %}

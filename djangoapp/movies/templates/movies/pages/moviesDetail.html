@@ -1,0 +1,24 @@
+{% extends 'movies/base.html' %}
+
+{% block content %}
+    <h1>Detalhes:</h1>
+    <p>Filme: {{ movies.Title }}</p>
+    <p>Classificação de idade: {{ movies.Rated }}</p>
+    <p>Data de lançamento: {{ movies.Released }}</p>
+    <p>Categoria: {{ movies.Genre }}</p>
+    <p>Atores: {{ movies.Actors }}</p>
+    <p>Escritores: {{ movies.Writer }}</p>
+    <p>Sinopse: {{ movies.Plot }}</p>
+    <p>Prêmios: {{ movies.Awards }}</p>
+    <p>Rating do IMDB: {{ movies.imdbRating }}</p>
+    <p>Tipo: {{ movies.Type }}</p>
+    <p>Poster: <img src="{{movies.Poster}}" alt="{{movies.Title}}" /></p>
+
+    <button><a href="{%url 'movies:atualizar' movies.id %}">Editar</a></button>
+
+    </br>
+    <button><a href="{%url 'movies:deletar' movies.id %}">Remover</a></button>
+    </br>
+
+    <button><a href="{%url 'movies:listar' %}">Ir para a lista de filmes</a></button>
+{% endblock content %}

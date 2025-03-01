@@ -1,11 +1,16 @@
 from django.shortcuts import render
 from django.urls import reverse_lazy
-from django.views.generic import CreateView, ListView, DeleteView, UpdateView
+from django.views.generic import CreateView, ListView, DeleteView, UpdateView, DetailView
 
 import requests
 
 from .forms import MoviesForm
 from .models import Movies
+
+
+def home(request):
+    return render(request, 'movies/pages/index.html')
+
 
 def search_view(request):
     form = MoviesForm()
@@ -60,7 +65,7 @@ class MoviesCreate(CreateView):
     model = Movies
     form_class = MoviesForm
     context_object_name = 'CreateMoviesForm'
-    template_name = 'endereco/moviesForm.html'
+    template_name = 'movies/pages/moviesForm.html'
     success_url = reverse_lazy('movies:listar')
 
 class MoviesList(ListView):
@@ -79,3 +84,8 @@ class MoviesUpdate(UpdateView):
     context_object_name = 'movies'
     template_name = 'movies/pages/moviesForm.html'
     success_url = reverse_lazy('movies:listar')
+
+class MoviesDetail(DetailView):
+    model = Movies
+    template_name = 'movies/pages/moviesDetail.html'
+    context_object_name = 'movies'

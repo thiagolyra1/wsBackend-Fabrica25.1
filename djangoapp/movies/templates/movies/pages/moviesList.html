@@ -6,30 +6,22 @@
         <table>
             <tr>
                 <th>Filme</th>
-                <th>Classificação de idade</th>
-                <th>Data de lançamento</th>
                 <th>Categoria</th>
                 <th>Atores</th>
                 <th>Escritores</th>
-                <th>Sinopse</th>
                 <th>Prêmios</th>
                 <th>Rating do IMDB</th>
-                <th>Tipo</th>
                 <th>Poster</th>
                 <th>Opções</th>
             </tr>
         {% for movie in movies_list %}
             <tr>
                 <td>{{ movie.Title }}</td>
-                <td>{{ movie.Rated }}</td>
-                <td>{{ movie.Released }}</td>
                 <td>{{ movie.Genre }}</td>
                 <td>{{ movie.Actors }}</td>
                 <td>{{ movie.Writer }}</td>
-                <td>{{ movie.Plot }}</td>
                 <td>{{ movie.Awards }}</td>
                 <td>{{ movie.imdbRating }}</td>
-                <td>{{ movie.Type }}</td>
                 <td>
                 {% if movie.Poster != "N/A" %}
                     
@@ -41,7 +33,7 @@
                 
                 <td>
                     <a href="{% url 'movies:atualizar' pk=movie.id %}">Editar</a>
-                    {% comment %} <a href="{% url 'endereco:detalhes' pk=movie.id %}">Detalhar</a>  {% endcomment %}
+                    <a href="{% url 'movies:detalhes' pk=movie.id %}">Detalhar</a> 
                     <a href="{% url 'movies:deletar' pk=movie.id %}">Deletar</a>
                 </td>
             </tr>
@@ -49,6 +41,8 @@
         </table>
         {% else %}
         <h1>Nenhum filme para listar.</h1>
+        <p><a href="{% url 'movies:buscar' %}">Faça buscas por filmes</a></p> ou
+        <p><a href="{% url 'movies:criar' %}">Crie seu próprio filme</a></p>
     {% endif %}
 
 {% comment %} <button><a href="{% url 'endereco:criar' %}">Criar</a></button> {% endcomment %}

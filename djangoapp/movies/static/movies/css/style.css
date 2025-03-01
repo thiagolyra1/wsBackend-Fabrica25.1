@@ -16,3 +16,503 @@ h1 {
     background-color: #007bff;
     color: white;
 }
+
+/* Estilo específico para a página de delete */
+
+
+/* Título da página de deletação */
+.delete-title {
+    color: #dc3545; /* Cor vermelha para indicar ação de exclusão */
+    text-align: center;
+    margin-top: 50px;
+    font-size: 2rem;
+}
+
+/* Formulário de deletação */
+.delete-form {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilo do parágrafo que contém o nome do filme */
+.delete-movie {
+    font-size: 1.2rem;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+/* Estilo do título do filme dentro do parágrafo */
+.delete-movie-title {
+    font-weight: bold;
+    color: #007bff; /* Azul para o nome do filme */
+}
+
+/* Estilo do link de cancelamento, agora como um botão */
+.delete-cancel-button {
+    display: inline-block;
+    width: 100%;
+    padding: 10px;
+    margin-top: 20px;
+    background-color: #28a745; /* Cor verde */
+    color: white;
+    text-align: center;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.delete-cancel-button:hover {
+    background-color: #218838; /* Cor mais escura de verde quando passar o mouse */
+}
+
+/* Estilo do botão de deletação */
+.delete-button {
+    width: 100%;
+    padding: 10px;
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    cursor: pointer;
+}
+
+.delete-button:hover {
+    background-color: #c82333; /* Cor mais escura de vermelho quando passar o mouse */
+}
+
+.delete-button:focus {
+    outline: none;
+}
+
+
+/* Estilos específicos para a página de detalhes */
+
+/* Título principal */
+.detalhe-title {
+    font-size: 2.5rem;
+    color: black;
+    text-align: center;
+    margin-top: 10px;
+}
+
+/* Estilo dos parágrafos contendo os detalhes dos filmes */
+.detalhe-movie-title,
+.detalhe-rated,
+.detalhe-released,
+.detalhe-genre,
+.detalhe-actors,
+.detalhe-writer,
+.detalhe-plot,
+.detalhe-awards,
+.detalhe-imdbrating,
+.detalhe-type,
+.detalhe-poster {
+    font-size: 1.2rem;
+    color: #333;
+    margin-bottom: 10px;
+    line-height: 1.6;
+    text-align: center;
+}
+
+/* Estilo para os detalhes em negrito (como o nome do filme) */
+.detalhe-movie-title span,
+.detalhe-rated span,
+.detalhe-released span,
+.detalhe-genre span,
+.detalhe-actors span,
+.detalhe-writer span,
+.detalhe-plot span,
+.detalhe-awards span,
+.detalhe-imdbrating span,
+.detalhe-type span {
+    font-weight: bold;
+    color: #007bff; /* Azul para destacar */
+}
+
+/* Estilo da imagem do poster */
+.detalhe-poster-img {
+    max-width: 100%;
+    height: auto;
+    margin-top: 10px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilos para os botões */
+.detalhe-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+/* Estilo do botão Editar */
+.detalhe-edit-button {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    font-size: 1.1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.detalhe-edit-button:hover {
+    background-color: #218838;
+}
+
+.detalhe-remove-button {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    font-size: 1.1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.detalhe-remove-button:hover {
+    background-color: #c82333;
+}
+
+.detalhe-list-button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    font-size: 1.1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.detalhe-list-button:hover {
+    background-color: #0056b3;
+}
+
+/* Links dentro dos botões */
+.detalhe-button-link {
+    color: white;
+    text-decoration: none;
+}
+
+.detalhe-button-link:hover {
+    text-decoration: underline;
+}
+
+/* Estilos específicos para a página de criação/edição */
+
+/* Título principal (Editar ou Cadastrar) */
+.criar-edit-title,
+.criar-register-title {
+    font-size: 2.5rem;
+    color: #007bff;
+    text-align: center;
+    margin-top: 30px;
+}
+
+/* Formulário */
+.criar-form {
+    width: 80%;
+    max-width: 600px;
+    margin: 30px auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #f9f9f9;
+}
+
+/* Estilos para os campos do formulário */
+.criar-form-field {
+    margin-bottom: 20px;
+}
+
+.criar-field-label {
+    display: block;
+    font-size: 1.1rem;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+/* Estilo dos campos de entrada */
+.criar-form input,
+.criar-form select,
+.criar-form textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+/* Estilo do botão de envio (Salvar Edição ou Cadastrar) */
+.criar-submit-button {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    font-size: 1.1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    text-align: center;
+}
+
+.criar-submit-button:hover {
+    background-color: #218838;
+}
+
+/* Estilos dos botões de navegação (Voltar para home e Ir para a lista) */
+.criar-buttons {
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+    gap: 30px;
+
+}
+
+.criar-list-button,
+.criar-home-button {
+    padding: 12px 20px;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    margin-bottom: 20px;
+}
+
+.criar-list-button:hover,
+.criar-home-button:hover {
+    background-color: #0056b3;
+}
+
+/* Links dentro dos botões */
+.criar-button-link {
+    color: white;
+    text-decoration: none;
+}
+
+.criar-button-link:hover {
+    text-decoration: underline;
+}
+
+/* Estilos específicos para a página de listagem de filmes */
+
+/* Título da página */
+.listar-title {
+    font-size: 2.5rem;
+    color: black;
+    text-align: center;
+    margin-top: 30px;
+}
+
+/* Estilos da tabela */
+.listar-table {
+    width: 90%;
+    margin: 30px auto;
+    border-collapse: collapse;
+    text-align: left;
+    background-color: #f9f9f9;
+}
+
+.listar-table-header {
+    background-color: #007bff;
+    color: white;
+}
+
+.listar-table-heading {
+    padding: 10px;
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+.listar-table-row {
+    border-bottom: 1px solid #ddd;
+}
+
+.listar-table-cell {
+    padding: 12px 15px;
+    font-size: 1rem;
+    color: #333;
+}
+
+.listar-table-image {
+    width: 100px;
+    height: auto;
+    border-radius: 5px;
+    object-fit: cover;
+}
+
+/* Estilos dos links dentro da tabela */
+.listar-link {
+    text-decoration: none;
+    padding: 6px 12px;
+    border-radius: 5px;
+    font-size: 1rem;
+    margin: 0 5px;
+    display: inline-block;
+}
+
+.editar-link {
+    background-color: #28a745;
+    color: white;
+}
+
+.detalhar-link {
+    background-color: #ffc107;
+    color: white;
+}
+
+.deletar-link {
+    background-color: #dc3545;
+    color: white;
+}
+
+.listar-link:hover {
+    opacity: 0.8;
+}
+
+/* Estilos dos links para ações adicionais */
+.listar-actions {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.listar-action-link {
+    color: #007bff;
+    text-decoration: none;
+    font-size: 1.1rem;
+}
+
+.listar-action-link:hover {
+    text-decoration: underline;
+}
+
+/* Caso não haja filmes para listar */
+.listar-no-movies-title {
+    font-size: 2rem;
+    color: #dc3545;
+    text-align: center;
+    margin-top: 30px;
+}
+
+
+/* Estilos específicos para a página de busca de filmes */
+
+/* Título da página */
+.buscar-title {
+    font-size: 2.5rem;
+    color: #007bff;
+    text-align: center;
+    margin-top: 30px;
+}
+
+/* Mensagens */
+.buscar-message {
+    font-size: 1.2rem;
+    color: #28a745;
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* Estilos do formulário de busca */
+.buscar-form {
+    width: 60%;
+    margin: 30px auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.buscar-form-field {
+    margin-bottom: 20px;
+}
+
+.buscar-form-label {
+    font-size: 1.1rem;
+    color: #333;
+}
+
+.buscar-form-button {
+    width: 100%;
+    padding: 12px;
+    font-size: 1.2rem;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.buscar-form-button:hover {
+    background-color: #0056b3;
+}
+
+/* Estilos da exibição das informações do filme */
+.movie-info {
+    margin-top: 40px;
+    padding: 20px;
+    background-color: #f1f1f1;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.movie-info-title {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.movie-info-detail {
+    font-size: 1.1rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.movie-info-poster {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.movie-info-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+/* Links */
+.buscar-link {
+    color: #007bff;
+    text-decoration: none;
+    font-size: 1.1rem;
+    margin-top: 20px;
+}
+
+.buscar-link:hover {
+    text-decoration: underline;
+}
+
+#tres_doidos{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #007bff;
+    text-decoration: none;
+    font-size: 1.1rem;
+}

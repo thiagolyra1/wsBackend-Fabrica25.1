@@ -1,24 +1,23 @@
 {% extends 'movies/base.html' %}
 
 {% block content %}
-    <h1>Detalhes:</h1>
-    <p>Filme: {{ movies.Title }}</p>
-    <p>Classificação de idade: {{ movies.Rated }}</p>
-    <p>Data de lançamento: {{ movies.Released }}</p>
-    <p>Categoria: {{ movies.Genre }}</p>
-    <p>Atores: {{ movies.Actors }}</p>
-    <p>Escritores: {{ movies.Writer }}</p>
-    <p>Sinopse: {{ movies.Plot }}</p>
-    <p>Prêmios: {{ movies.Awards }}</p>
-    <p>Rating do IMDB: {{ movies.imdbRating }}</p>
-    <p>Tipo: {{ movies.Type }}</p>
-    <p>Poster: <img src="{{movies.Poster}}" alt="{{movies.Title}}" /></p>
+    <h1 class="detalhe-title">Detalhes:</h1>
 
-    <button><a href="{%url 'movies:atualizar' movies.id %}">Editar</a></button>
+    <p class="detalhe-movie-title">Filme: <span>{{ movies.Title }}</span></p>
+    <p class="detalhe-rated">Classificação de idade: <span>{{ movies.Rated }}</span></p>
+    <p class="detalhe-released">Data de lançamento: <span>{{ movies.Released }}</span></p>
+    <p class="detalhe-genre">Categoria: <span>{{ movies.Genre }}</span></p>
+    <p class="detalhe-actors">Atores: <span>{{ movies.Actors }}</span></p>
+    <p class="detalhe-writer">Escritores: <span>{{ movies.Writer }}</span></p>
+    <p class="detalhe-plot">Sinopse: <span>{{ movies.Plot }}</span></p>
+    <p class="detalhe-awards">Prêmios: <span>{{ movies.Awards }}</span></p>
+    <p class="detalhe-imdbrating">Rating do IMDB: <span>{{ movies.imdbRating }}</span></p>
+    <p class="detalhe-type">Tipo: <span>{{ movies.Type }}</span></p>
+    <p class="detalhe-poster">Poster: <img src="{{ movies.Poster }}" alt="{{ movies.Title }}" class="detalhe-poster-img" /></p>
 
-    </br>
-    <button><a href="{%url 'movies:deletar' movies.id %}">Remover</a></button>
-    </br>
-
-    <button><a href="{%url 'movies:listar' %}">Ir para a lista de filmes</a></button>
+    <div class="detalhe-buttons">
+        <button class="detalhe-edit-button"><a href="{% url 'movies:atualizar' movies.id %}" class="detalhe-button-link">Editar</a></button>
+        <button class="detalhe-remove-button"><a href="{% url 'movies:deletar' movies.id %}" class="detalhe-button-link">Excluir filme</a></button>
+        <button class="detalhe-list-button"><a href="{% url 'movies:listar' %}" class="detalhe-button-link">Ir para a lista de filmes</a></button>
+    </div>
 {% endblock content %}

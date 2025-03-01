@@ -2,30 +2,33 @@
 
 {% block content %}
     {% if movies %}
-        <h1>Editar</h1>
-        <form action="{% url 'movies:atualizar' pk=movies.id %}" method="post">
+        <h1 class="criar-edit-title">Editar</h1>
+        <form action="{% url 'movies:atualizar' pk=movies.id %}" method="post" class="criar-form">
             {% csrf_token %}
             {% for field in form %}
-                {{ field.label_tag }}
-                {{ field }}</br>
+                <div class="criar-form-field">
+                    <label for="{{ field.id_for_label }}" class="criar-field-label">{{ field.label }}</label>
+                    {{ field }}
+                </div>
             {% endfor %}
-        </br>
-            <button type="submit">Salvar Edição</button>
+            <button type="submit" class="criar-submit-button">Salvar Edição</button>
         </form>
-        </br>
     {% else %}
-        <h1>Cadastrar Filme</h1>
-        <form action="{% url 'movies:criar' %}" method="post">
+        <h1 class="criar-register-title">Cadastrar Filme</h1>
+        <form action="{% url 'movies:criar' %}" method="post" class="criar-form">
             {% csrf_token %}
             {% for field in form %}
-                {{ field.label_tag }}
-                {{ field }}</br>
+                <div class="criar-form-field">
+                    <label for="{{ field.id_for_label }}" class="criar-field-label">{{ field.label }}</label>
+                    {{ field }}
+                </div>
             {% endfor %}
-        </br>
-            <button type="submit">Cadastrar</button>
+            <button type="submit" class="criar-submit-button">Cadastrar</button>
         </form>
-        </br>
     {% endif %}
 
-    <button><a href="{% url 'movies:index' %}">Voltar para a home</a></button>
+    <div class="criar-buttons">
+        <button class="criar-list-button"><a href="{% url 'movies:listar' %}" class="criar-button-link">Ir para a lista de filmes (Não esqueça de cadastrar seu livro antes, caso queira salvar ele no banco de dados)</a></button>
+        <button class="criar-home-button"><a href="{% url 'movies:index' %}" class="criar-button-link">Voltar para a home</a></button>
+    </div>
 {% endblock content %}

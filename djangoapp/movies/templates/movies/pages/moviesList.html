@@ -2,46 +2,50 @@
 
 {% block content %}
     {% if movies_list %}
-        <h1>Filmes:</h1>
-        <table>
-            <tr>
-                <th>Filme</th>
-                <th>Categoria</th>
-                <th>Atores</th>
-                <th>Escritores</th>
-                <th>Prêmios</th>
-                <th>Rating do IMDB</th>
-                <th>Poster</th>
-                <th>Opções</th>
+        <h1 class="listar-title"> Lista de filmes cadastrados:</h1>
+        <table class="listar-table">
+            <tr class="listar-table-header">
+                <th class="listar-table-heading">Filme</th>
+                <th class="listar-table-heading">Categoria</th>
+                <th class="listar-table-heading">Atores</th>
+                <th class="listar-table-heading">Escritores</th>
+                <th class="listar-table-heading">Prêmios</th>
+                <th class="listar-table-heading">Rating do IMDB</th>
+                <th class="listar-table-heading">Poster</th>
+                <th class="listar-table-heading">Opções</th>
             </tr>
-        {% for movie in movies_list %}
-            <tr>
-                <td>{{ movie.Title }}</td>
-                <td>{{ movie.Genre }}</td>
-                <td>{{ movie.Actors }}</td>
-                <td>{{ movie.Writer }}</td>
-                <td>{{ movie.Awards }}</td>
-                <td>{{ movie.imdbRating }}</td>
-                <td>
-                {% if movie.Poster != "N/A" %}
-                    
-                        <img src="{{movie.Poster}}" alt="{{movie.Title}}" />
-                {% else %}
-                        <img src="https://png.pngtree.com/png-vector/20190820/ourmid/pngtree-no-image-vector-illustration-isolated-png-image_1694547.jpg" alt="Imagem não encontrada" />
-                {% endif %}
-                </td>
-                
-                <td>
-                    <a href="{% url 'movies:atualizar' pk=movie.id %}">Editar</a>
-                    <a href="{% url 'movies:detalhes' pk=movie.id %}">Detalhar</a> 
-                    <a href="{% url 'movies:deletar' pk=movie.id %}">Deletar</a>
-                </td>
-            </tr>
-        {% endfor %}
+            {% for movie in movies_list %}
+                <tr class="listar-table-row">
+                    <td class="listar-table-cell">{{ movie.Title }}</td>
+                    <td class="listar-table-cell">{{ movie.Genre }}</td>
+                    <td class="listar-table-cell">{{ movie.Actors }}</td>
+                    <td class="listar-table-cell">{{ movie.Writer }}</td>
+                    <td class="listar-table-cell">{{ movie.Awards }}</td>
+                    <td class="listar-table-cell">{{ movie.imdbRating }}</td>
+                    <td class="listar-table-cell">
+                        {% if movie.Poster != "N/A" %}
+                            <img class="listar-table-image" src="{{movie.Poster}}" alt="{{movie.Title}}" />
+                        {% else %}
+                            <img class="listar-table-image" src="https://png.pngtree.com/png-vector/20190820/ourmid/pngtree-no-image-vector-illustration-isolated-png-image_1694547.jpg" alt="Imagem não encontrada" />
+                        {% endif %}
+                    </td>
+                    <td class="listar-table-cell">
+                        <a class="listar-link editar-link" href="{% url 'movies:atualizar' pk=movie.id %}">Editar</a>
+                        <a class="listar-link detalhar-link" href="{% url 'movies:detalhes' pk=movie.id %}">Detalhar</a> 
+                        <a class="listar-link deletar-link" href="{% url 'movies:deletar' pk=movie.id %}">Deletar</a>
+                    </td>
+                </tr>
+            {% endfor %}
         </table>
-        {% else %}
-        <h1>Nenhum filme para listar.</h1>
-        <p><a href="{% url 'movies:buscar' %}">Faça buscas por filmes</a></p>ou
-        <p><a href="{% url 'movies:criar' %}">Crie seu próprio filme</a></p>
+        <div class="listar-actions">
+            <p><a class="listar-action-link" href="{% url 'movies:buscar' %}">Faça buscas por outros filmes</a></p>
+            <p><a class="listar-action-link" href="{% url 'movies:criar' %}">Crie um cadastro de filme</a></p>
+        </div>
+    {% else %}
+        <h1 class="listar-no-movies-title">Nenhum filme para listar.</h1>
+        <div class="listar-actions">
+            <p><a class="listar-action-link" href="{% url 'movies:buscar' %}">Faça buscas por filmes</a></p>
+            <p><a class="listar-action-link" href="{% url 'movies:criar' %}">Crie seu próprio filme</a></p>
+        </div>
     {% endif %}
 {% endblock content %}

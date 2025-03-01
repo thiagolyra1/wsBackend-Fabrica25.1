@@ -1,11 +1,14 @@
 {% extends 'movies/base.html' %}
 
 {% block content %}
-    <h1>Confirme a remoção do filme: </h1>
-    <form action="{% url 'movies:deletar' movies.id %}" method="post">
+    <h1 class="delete-title">Confirme a remoção do filme: </h1>
+
+    <form action="{% url 'movies:deletar' movies.id %}" method="post" class="delete-form">
         {% csrf_token %}
-        <p>Filme: <span>{{ movies.Title }}</span></p>
-        <a href="{% url 'movies:listar' %}">Cancelar</a>
-        <button type="submit">Deletar</button>
+        <p class="delete-movie">Filme: <span class="delete-movie-title">{{ movies.Title }}</span></p>
+        <a href="{% url 'movies:listar' %}" class="delete-cancel-button">Cancelar</a>
+        </br>
+        </br>
+        <button type="submit" class="delete-button">Deletar</button>
     </form>
 {% endblock content %}

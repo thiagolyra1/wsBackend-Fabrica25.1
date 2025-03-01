@@ -41,17 +41,19 @@ def search_view(request):
                     'imdbRating': dados_filme['imdbRating'],
                     'Type': dados_filme['Type'],
                 }
-
-                form = MoviesForm(data=resposta_em_json_filtrada)
                 
-                if form.is_valid():
-                    try:
-                        form.save()
-                        print("Registro salvo com sucesso!")
-                    except Exception as e:
-                        print(f"Erro ao salvar: {e}")
+                if Movies.objects.filter(Title=resposta_em_json_filtrada['Title']).exists():
+                    message = f'O filme "{resposta_em_json_filtrada["Title"]}" já foi cadastrado anteriormente. Você pode procurar ele em "Listar filmes cadastrados"'
                 else:
-                    message = "Erro ao validar o formulário."
+                    form = MoviesForm(data=resposta_em_json_filtrada)                
+                    if form.is_valid():
+                        try:
+                            form.save()
+                            print("Registro salvo com sucesso!")
+                        except Exception as e:
+                            print(f"Erro ao salvar: {e}")
+                    else:
+                        message = "Erro ao validar o formulário."
         else:
             message = 'Erro durante a requisição na API'
 

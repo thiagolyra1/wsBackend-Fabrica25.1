@@ -1,9 +1,10 @@
 import requests
-from rest_framework.decorators import api_view
+from rest_framework.decorators import api_view, permission_classes
 from rest_framework.response import Response
 from rest_framework import status
 from .models import Advice
 from .serializers import AdviceSerializer
+from rest_framework.permissions import IsAuthenticated
 
 # Pegando conselho aleatório
 @api_view(['GET'])
@@ -22,6 +23,7 @@ def random_advice(request):
 
 # Cria um conselho
 @api_view(['POST'])
+@permission_classes([IsAuthenticated])
 def create_advice(request):
     if request.method == 'POST':
         if 'advice' in request.data:
@@ -37,6 +39,7 @@ def create_advice(request):
 
 # Listar todos os conselhos
 @api_view(['GET'])
+@permission_classes([IsAuthenticated])
 def get_advices(request):
     soltar = Advice.objects.all()
     serializer = AdviceSerializer(soltar, many=True)
@@ -45,6 +48,7 @@ def get_advices(request):
 
 # Pegando conselho por ID
 @api_view(['GET'])
+@permission_classes([IsAuthenticated])
 def get_advice_id(request, pk):
     try:
         soltar = Advice.objects.get(pk=pk)
@@ -55,6 +59,7 @@ def get_advice_id(request, pk):
 
 # Atualizar conselho por ID
 @api_view(['PUT'])
+@permission_classes([IsAuthenticated])
 def update_advice(request, pk):
     try:
         soltar = Advice.objects.get(pk=pk)
@@ -74,6 +79,7 @@ def update_advice(request, pk):
 
 # Deletar conselho por ID
 @api_view(['DELETE'])
+@permission_classes([IsAuthenticated])
 def delete_advice(request, pk):
     try:
         advice = Advice.objects.get(pk=pk)
